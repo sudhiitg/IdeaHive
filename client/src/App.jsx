@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
 import Home from './pages/Home';
-import Signin from './pages/Signin';
+import Signin from './pages/Signin.jsx';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 export default function App() {
