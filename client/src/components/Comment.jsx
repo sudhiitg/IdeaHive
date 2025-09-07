@@ -131,7 +131,7 @@ useEffect(() => {
               type="button"
               className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition"
             >
-              Delete
+              Delete  
             </button>
           )}
         </li>
