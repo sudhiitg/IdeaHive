@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Comment from '../Comment.jsx';
+import Comment from './Comment.jsx';
 export default function Postview() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
