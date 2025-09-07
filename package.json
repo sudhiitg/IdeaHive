@@ -15,7 +15,7 @@
   "scripts": {
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node api/index.js"
   },
   "keywords": [],
   "author": "",
