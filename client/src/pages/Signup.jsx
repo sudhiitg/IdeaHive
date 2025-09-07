@@ -39,27 +39,56 @@ export default function Signup() {
       }
     };
   return (
-    <div className='p-3 max-w-lg mx-auto'>
-        <h1 className='text-3xl text-center font-semibold
-        my-7'>Sign Up</h1>
-        <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-            <input type='text' placeholder='username'
-                className='border p-3 rounded-lg' id='username'onChange={handleChange}/>
-             <input type='email' placeholder='email'
-                className='border p-3 rounded-lg' id='email'onChange={handleChange}/>
-             <input type='password' placeholder='password'
-                className='border p-3 rounded-lg' id='password'onChange={handleChange}/> 
-             <button className='bg-slate-700 text-white p-3
-             rounded-lg uppercase hover: opacity-95 disabled:opacity-80'>Sign up</button>        
-                
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br ">
+  <div className=" p-8 rounded-2xl shadow-lg w-full max-w-md">
+    {/* Header */}
+    <h1 className="text-3xl font-bold text-center  mb-2">
+      Create an Account
+    </h1>
+    <p className="text-center  mb-6">
+      Join <span className="text-teal-600 font-semibold">IdeaHive</span> and start sharing your stories
+    </p>
 
-        </form>
-        <div className='flex gap-2 mt-5'>
-         <p>Have an account?</p>
-          <Link to={"/sign-in"}>
-            <span className='text-blue-700'>Sign in</span>
-          </Link> 
-        </div>
+    {/* Form */}
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <input
+        type="text"
+        placeholder="Username"
+        className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none"
+        id="username"
+        onChange={handleChange}
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none"
+        id="email"
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        className="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none"
+        id="password"
+        onChange={handleChange}
+      />
+
+      <button
+        className="w-full bg-teal-600 p-3 rounded-lg font-medium uppercase hover:bg-teal-700 disabled:opacity-80 transition"
+      >
+        Sign Up
+      </button>
+    </form>
+
+    {/* Footer */}
+    <div className="flex justify-center gap-2 mt-6 text-sm">
+      <p className="text-gray-600">Already have an account?</p>
+      <Link to={"/sign-in"} className="text-teal-600 font-medium hover:underline">
+        Sign In
+      </Link>
     </div>
+  </div>
+</div>
+
   )
 }
