@@ -37,7 +37,7 @@ export default function PostCard({ post }) {
   return (
     <div className="group flex w-full max-w-2xl border border-teal-500 hover:border-2 rounded-lg overflow-hidden transition-all">
       {/* Left side image */}
-      <Link to={`/post/${post.slug}`} className="w-1/3">
+      <Link to={currentUser==null?'/sign-in':`/post/${post.slug}`} className="w-1/3">
         <img
           src={post.image}
           alt="post cover"
