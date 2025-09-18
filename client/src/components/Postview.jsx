@@ -1,7 +1,7 @@
 import React, { useState, useEffect, use } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import Comment from './comment.jsx';
+import Comment from './Comment.jsx';
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 
 
