@@ -1,7 +1,7 @@
 import Comment from '../models/comment.model.js';
 import { errorHandler } from '../utils/error.js';
 export const createComment = async (req, res,next) => {
-  const { postId, userId, content } = req.body;
+  const { postId, userId, content,username } = req.body;
 
   if (!postId || !userId || !content) {
     return res.status(400).json({ message: "All fields are required" });
@@ -12,6 +12,7 @@ export const createComment = async (req, res,next) => {
       postId,
       userId,
       content,
+      username
     });
 
     await newComment.save();

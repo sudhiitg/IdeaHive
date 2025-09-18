@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { FaTrash } from "react-icons/fa";
 
 export default function Comment({post}) {
   
@@ -16,7 +17,8 @@ export default function Comment({post}) {
 const comment={
     content:text,
     userId:currentUser._id,
-    postId:post._id
+    postId:post._id,
+    username:currentUser.username
 } 
 
      const res=await fetch('/api/comment/create',{
@@ -125,15 +127,20 @@ useEffect(() => {
       {comments.map((c) => (
         <li key={c._id} className="border border-gray-200 rounded p-2 flex justify-between items-center">
           <p>{c.content}</p>
+          <div className="flex items-center space-x-4">
           {currentUser!=null && c.userId === currentUser._id && (
             <button
               onClick={() => handleDelete(c._id)}
               type="button"
-              className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition"
+              // className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition"
             >
-              Delete  
+              <FaTrash size={20} />
             </button>
+
           )}
+          <span className="text-sm text-gray-500">{new Date(c.createdAt).toLocaleString()}</span>
+          <span className="text-sm font-medium text-gray-700">- {c.username}</span>
+          </div>
         </li>
       ))}
     </ul>
